@@ -1,0 +1,50 @@
+<div class="min-h-screen bg-gray-100" style="background-image: url('assets/banner.jpg'); background-size: cover;">
+    <div class="container mx-auto px-4 py-8 animate-fade-in bg-white bg-opacity-90">
+      <!-- Bannière principale -->
+      <section class="text-center py-16 bg-blue-600 text-white rounded-lg shadow-lg transform transition-all duration-500 hover:scale-105">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Bienvenue au Centre de Formation Professionnelle</h1>
+        <p class="text-lg md:text-xl mb-6">Développez vos compétences avec nos formations certifiées.</p>
+        <button (click)="openRegisterModal()" class="bg-yellow-400 text-gray-800 px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105">
+          Découvrir nos formations
+        </button>
+      </section>
+
+      <!-- Section Formations en vedette -->
+      <section class="py-12">
+        <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Formations en vedette</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2">
+            <h3 class="text-xl font-semibold mb-2">Développement Web</h3>
+            <p class="text-gray-600 mb-4">Durée : 50h - Prix : 300€</p>
+            <button (click)="openRegisterModal()" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition-colors duration-300">
+              Voir détails
+            </button>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2">
+            <h3 class="text-xl font-semibold mb-2">Graphisme Avancé</h3>
+            <p class="text-gray-600 mb-4">Durée : 40h - Prix : 250€</p>
+            <button (click)="openRegisterModal()" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition-colors duration-300">
+              Voir détails
+            </button>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2">
+            <h3 class="text-xl font-semibold mb-2">Gestion de Projet</h3>
+            <p class="text-gray-600 mb-4">Durée : 60h - Prix : 350€</p>
+            <button (click)="openRegisterModal()" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition-colors duration-300">
+              Voir détails
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modal de connexion -->
+      <app-modal [isOpen]="showLoginModal" (closeModal)="closeLoginModal()">
+        <app-login-form (login)="onLogin($event)"></app-login-form>
+      </app-modal>
+
+      <!-- Modal d'inscription -->
+      <app-modal [isOpen]="showRegisterModal" (closeModal)="closeRegisterModal()">
+        <app-register-form (register)="onRegister($event)"></app-register-form>
+      </app-modal>
+    </div>
+  </div>
